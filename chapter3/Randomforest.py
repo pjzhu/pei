@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.externals import joblib
-#参数调整
+
 def adjust_para(x_train,y_train):
     nTreeList = range(50, 201, 1) #最大决策树个数
     maxfeatures=range(1,21,1)#最大特征数 
@@ -161,20 +161,19 @@ def rt(x_train, y_train,x_test,y_test,x_testall,y_testall,parameters):
 	return rf1
     
 if __name__ == '__main__':
-    #训练集
-    filepath =  u"D:\\data\\RF_data\\sample.csv"
+    filepath =  u"D:\\data\\RF\\sample.csv"
     data = pd.read_csv(filepath, header=0, sep=',',na_values='NULL')
     data2=data
     X=data2.iloc[:,0:-1]
     Y=data2.iloc[:,-1]
-    #测试集
-    filepath2 =  u"D:\\data\\RF_data\\test.csv"
+
+    filepath2 =  u"D:\\data\\RF\\test.csv"
     testdata = pd.read_csv(filepath2, header=0, sep=',',na_values='NULL')
     testdata2=testdata
     X2=testdata2.iloc[:,0:-1]
     Y2=testdata2.iloc[:,-1]
-    #全部样本
-    filepath3 =  u"D:\\data\\RF_data\\all.csv"
+
+    filepath3 =  u"D:\\data\\RF\\all.csv"
     testalldata = pd.read_csv(filepath3, header=0, sep=',',na_values='NULL')
     testalldata2=testalldata
     XALL=testalldata2.iloc[:,0:-1]

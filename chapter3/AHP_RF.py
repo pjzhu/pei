@@ -21,20 +21,20 @@ if __name__ == '__main__':
     AHP=[]
     RF=[]
     weight=[]
-    file1 = open("D:\\data\\RF_AHP_data\\weightdataAHP.txt",'r')
+    file1 = open("D:\\data\\RF_AHP\\weightdataAHP.txt",'r')
     for line1 in file1:
         line1=line1.strip()
         AHP.append(float(line1))
     file1.close()
-    file2 = open("D:\\data\\RF_AHP_data\\weightdataRF.txt",'r')
+    file2 = open("D:\\data\\RF_AHP\\weightdataRF.txt",'r')
     for line2 in file2:
         line2=line2.strip()
         RF.append(float(line2))
     file2.close()
 	
     weight=get_w(AHP,RF)
-    input_file=open("D:\\data\\RF_AHP_data\\data.csv","r")
-    output_file=open("D:\\data\\RF_AHP_data\\AHP_RF.csv","w")
+    input_file=open("D:\\data\\RF_AHP\\data.csv","r")
+    output_file=open("D:\\data\\RF_AHP\\AHP_RF.csv","w")
     name=input_file.readline()
     name=name.rstrip()+","+'risk'+'\n'
     output_file.write(name)
